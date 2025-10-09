@@ -1,0 +1,17 @@
+---
+import NavFItem from "./NavFItem.astro";
+import NavBarMobile from "./NavBarMobile.astro";
+import NavBarFull from "./NavBarFull.astro";
+import Logo from "./Logo.astro";
+---
+
+<div class="size-full flex flex-col">
+    <!-- Mobile -->
+    <div class="size-full flex lg:hidden">
+        <NavBarMobile />
+    </div>
+    <!-- Full -->
+    <div class="size-full hidden lg:flex">
+        <NavBarFull />
+    </div>
+</div>

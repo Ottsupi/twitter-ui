@@ -12,4 +12,7 @@
   --container-sm: 42rem;
   --container-md: 64rem;
   --container-lg: 80rem;
+
+  --color-darken: hsl(0, 0%, 8%, 0.1);
+  --color-lighten: hsl(0, 0%, 92%, 0.1);
 }

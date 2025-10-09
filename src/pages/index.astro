@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import NavBar from "../components/NavBar.astro";
 ---
 
 <MainLayout>
@@ -7,15 +8,9 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="xs:max-w-sm md:max-w-md lg:max-w-lg mx-auto flex flex-row">
         <div class="w-full flex flex-row">
             <!-- Nav -->
-            <div class="bg-red-100 hidden xs:flex">
-                <div class="h-screen sticky top-0">
-                    <div
-                        class="h-full flex flex-row justify-center items-center"
-                    >
-                        <span class="text-6xl">
-                            <code>Nav</code>
-                        </span>
-                    </div>
+            <div class="hidden xs:flex">
+                <div class="h-screen sticky top-0 overflow-auto">
+                    <NavBar />
                 </div>
             </div>
             <div class="grow grid grid-cols-1 md:grid-cols-10">
