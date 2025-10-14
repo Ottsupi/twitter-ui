@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import NavBar from "../components/NavBar.astro";
+import Feed from "../components/Feed.astro";
 ---
 
 <MainLayout>
@@ -15,25 +16,11 @@ import NavBar from "../components/NavBar.astro";
             </div>
             <div class="grow grid grid-cols-1 md:grid-cols-10">
                 <!-- Feed -->
-                <div class="col-span-1 md:col-span-6 bg-blue-100">
-                    <div class="h-96 flex flex-row justify-center items-center">
-                        <span class="text-6xl">
-                            <code>Feed</code>
-                        </span>
-                    </div>
-                    <div class="h-96 flex flex-row justify-center items-center">
-                        <span class="text-6xl">
-                            <code>Feed</code>
-                        </span>
-                    </div>
-                    <div class="h-96 flex flex-row justify-center items-center">
-                        <span class="text-6xl">
-                            <code>Feed</code>
-                        </span>
-                    </div>
+                <div class="col-span-1 md:col-span-6">
+                    <Feed />
                 </div>
                 <!-- News -->
-                <div class="col-span-1 md:col-span-4 bg-green-100">
+                <div class="col-span-1 md:col-span-4">
                     <div class="h-96 flex flex-row justify-center items-center">
                         <span class="text-6xl">
                             <code>News</code>

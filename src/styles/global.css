@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-*: initial;
-  --breakpoint-xs: 32rem;
-  --breakpoint-sm: 42rem;
-  --breakpoint-md: 64rem;
-  --breakpoint-lg: 80rem;
+    --breakpoint-*: initial;
+    --breakpoint-xs: 32rem;
+    --breakpoint-sm: 42rem;
+    --breakpoint-md: 64rem;
+    --breakpoint-lg: 80rem;
 
-  --container-*: initial;
-  --container-xs: 32rem;
-  --container-sm: 42rem;
-  --container-md: 64rem;
-  --container-lg: 80rem;
+    --container-*: initial;
+    --container-xs: 32rem;
+    --container-sm: 42rem;
+    --container-md: 64rem;
+    --container-lg: 80rem;
 
-  --color-darken: hsl(0, 0%, 8%, 0.1);
-  --color-lighten: hsl(0, 0%, 92%, 0.1);
+    --color-darken: hsl(0, 0%, 8%, 0.1);
+    --color-darken-2: hsl(0, 0%, 8%, 0.03);
+    --color-lighten: hsl(0, 0%, 92%, 0.1);
 }

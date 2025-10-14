@@ -1,0 +1,15 @@
+---
+import FeedPost from "./FeedPost.astro";
+import FeedTabs from "./FeedTabs.astro";
+import FeedWritePost from "./FeedWritePost.astro";
+---
+
+<div class="size-full border-x border-gray-200">
+    <FeedTabs />
+    <FeedWritePost />
+    <div class="flex flex-col divide-y divide-gray-200">
+        <FeedPost />
+        <FeedPost />
+        <FeedPost />
+    </div>
+</div>
