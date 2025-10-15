@@ -3,7 +3,39 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+    lang="en"
+    x-data="{
+        // If theme is set, get saved mode
+        // Else, follow system preference
+        isDarkMode: localStorage.getItem('theme')
+                ? localStorage.getItem('theme') == 'dark'
+                : window.matchMedia('(prefers-color-scheme: dark)').matches,
+        theme: localStorage.getItem('theme') || 'system',
+    }"
+    x-init="
+        // This script only supports two modes, light and dark
+        console.log(`Starting theme is ${theme}`);
+        console.log(`Variable 'isDarkMode' is ${isDarkMode}`);
+
+        // If current mode is the same as preference, follow system theme
+        $watch('isDarkMode', (isDarkMode) => {
+            isDarkMode == window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? localStorage.setItem('theme', 'system')
+                : localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            theme = localStorage.getItem('theme');
+            console.log(`Variable 'isDarkMode' is changed to ${isDarkMode}`);
+            console.log(`Theme is ${theme}`);
+        });
+
+        // Prioritize system preference
+        window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+            console.log('System preferred color scheme changed. Prioritizing...');
+            isDarkMode = e.matches;
+        });
+    "
+    x-bind:class="{ 'dark': isDarkMode }"
+>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +53,7 @@ import "../styles/global.css";
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"
         ></script>
     </head>
-    <body class="">
+    <body class="bg-white dark:bg-black transition-colors duration-300">
         <slot>
             <div class="h-screen flex flex-row justify-center items-center">
                 <span class="text-6xl">
