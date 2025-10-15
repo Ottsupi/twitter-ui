@@ -1,7 +1,8 @@
 ---
+import Feed from "../components/Feed.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import NavBar from "../components/NavBar.astro";
-import Feed from "../components/Feed.astro";
+import NewsBar from "../components/NewsBar.astro";
 ---
 
 <MainLayout>
@@ -21,16 +22,7 @@ import Feed from "../components/Feed.astro";
                 </div>
                 <!-- News -->
                 <div class="col-span-1 md:col-span-4">
-                    <div class="h-96 flex flex-row justify-center items-center">
-                        <span class="text-6xl">
-                            <code>News</code>
-                        </span>
-                    </div>
-                    <div class="h-96 flex flex-row justify-center items-center">
-                        <span class="text-6xl">
-                            <code>News</code>
-                        </span>
-                    </div>
+                    <NewsBar />
                 </div>
             </div>
         </div>

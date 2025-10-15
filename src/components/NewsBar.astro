@@ -1,0 +1,200 @@
+---
+import SearchBar from "./SearchBar.astro";
+---
+
+<div class="flex flex-col ms-8 me-3 my-3 gap-y-3">
+    <div class="">
+        <SearchBar />
+    </div>
+    <!-- Daily News -->
+    <div class="border border-transparent-200 rounded-xl">
+        <div class="flex flex-col *:last:rounded-b-xl">
+            <div class="flex flex-row p-3">
+                <span class="text-xl font-bold">Today's News</span>
+            </div>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3 gap-y-2">
+                    <span class="font-medium">
+                        New The Patrick Star Show episodes premiering September
+                        12 - October 24
+                    </span>
+                    <span class="text-xs text-gray-600">
+                        4 days ago &centerdot; Entertainment &centerdot; 58.9K
+                        posts
+                    </span>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3 gap-y-2">
+                    <span class="font-medium">
+                        Never-Before-Seen 'SpongeBob SquarePants' Short "Order
+                        Up" Is Coming to Theaters With 'Smurfs'
+                    </span>
+                    <span class="text-xs text-gray-600">
+                        1 day ago &centerdot; Entertainment &centerdot; 253.4K
+                        posts
+                    </span>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3 gap-y-2">
+                    <span class="font-medium">
+                        Spongbob celebrates Lief Ericson Day!
+                    </span>
+                    <span class="text-xs text-gray-600">
+                        Today &centerdot; Entertainment &centerdot; 2,379 posts
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Trending -->
+    <div class="border border-transparent-200 rounded-xl">
+        <div class="flex flex-col *:last:rounded-b-xl">
+            <div class="flex flex-row p-3">
+                <span class="text-xl font-bold">What's happening</span>
+            </div>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3">
+                    <span class="text-xs text-gray-600">
+                        Trending in Atlantis
+                    </span>
+                    <span class="font-medium"> #KingNeptune </span>
+                    <span class="text-xs text-gray-600"> 100.2K posts </span>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3">
+                    <span class="text-xs text-gray-600">
+                        Trending in Bikini Bottom
+                    </span>
+                    <span class="font-medium"> #ThePatrickStarShow </span>
+                    <span class="text-xs text-gray-600"> 97.1K posts </span>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3">
+                    <span class="text-xs text-gray-600">
+                        Trending in a Pineapple
+                    </span>
+                    <span class="font-medium"> #LiefEricsonDay </span>
+                    <span class="text-xs text-gray-600"> 123 posts </span>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3">
+                    <span class="font-medium">Show more</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Follow Suggestions -->
+    <div class="border border-transparent-200 rounded-xl">
+        <div class="flex flex-col *:last:rounded-b-xl">
+            <div class="flex flex-row p-3">
+                <span class="text-xl font-bold">Who to follow</span>
+            </div>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-row items-center px-3 py-2 gap-x-2">
+                    <img
+                        src="/src/images/profile_picture.png"
+                        alt="Profile Picture"
+                        class="size-10 rounded-full"
+                    />
+                    <div class="flex flex-col items-start">
+                        <span
+                            class="font-medium truncate max-w-36 text-gray-900"
+                        >
+                            Spongebob Squarepants
+                        </span>
+                        <span class="truncate max-w-36 text-gray-600">
+                            @spongebob
+                        </span>
+                    </div>
+                    <div class="ms-auto">
+                        <button class="cursor-pointer">
+                            <div
+                                class="bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
+                            >
+                                <div class="flex px-4 py-1.5">
+                                    <span class="text-white font-medium">
+                                        Follow
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-row items-center px-3 py-2 gap-x-2">
+                    <img
+                        src="/src/images/profile_picture.png"
+                        alt="Profile Picture"
+                        class="size-10 rounded-full"
+                    />
+                    <div class="flex flex-col items-start">
+                        <span
+                            class="font-medium truncate max-w-36 text-gray-900"
+                        >
+                            Spongebob Squarepants
+                        </span>
+                        <span class="truncate max-w-36 text-gray-600">
+                            @spongebob
+                        </span>
+                    </div>
+                    <div class="ms-auto">
+                        <button class="cursor-pointer">
+                            <div
+                                class="bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
+                            >
+                                <div class="flex px-4 py-1.5">
+                                    <span class="text-white font-medium">
+                                        Follow
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-row items-center px-3 py-2 gap-x-2">
+                    <img
+                        src="/src/images/profile_picture.png"
+                        alt="Profile Picture"
+                        class="size-10 rounded-full"
+                    />
+                    <div class="flex flex-col items-start">
+                        <span
+                            class="font-medium truncate max-w-36 text-gray-900"
+                        >
+                            Spongebob Squarepants
+                        </span>
+                        <span class="truncate max-w-36 text-gray-600">
+                            @spongebob
+                        </span>
+                    </div>
+                    <div class="ms-auto">
+                        <button class="cursor-pointer">
+                            <div
+                                class="bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
+                            >
+                                <div class="flex px-4 py-1.5">
+                                    <span class="text-white font-medium">
+                                        Follow
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="hover:bg-transparent-200 transition-colors">
+                <div class="flex flex-col p-3">
+                    <span class="font-medium">Show more</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
