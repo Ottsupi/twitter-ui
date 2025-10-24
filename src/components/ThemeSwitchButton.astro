@@ -1,0 +1,13 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<button class="cursor-pointer" @click="isDarkMode = !isDarkMode">
+    <slot>
+        <div class="hover:bg-transparent-400 rounded-full transition-colors">
+            <div class="size-12 flex justify-center items-center">
+                <ThemeIcon />
+            </div>
+        </div>
+    </slot>
+</button>
