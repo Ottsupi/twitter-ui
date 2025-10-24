@@ -15,22 +15,16 @@ import "../styles/global.css";
     }"
     x-init="
         // This script only supports two modes, light and dark
-        console.log(`Starting theme is ${theme}`);
-        console.log(`Variable 'isDarkMode' is ${isDarkMode}`);
-
         // If current mode is the same as preference, follow system theme
         $watch('isDarkMode', (isDarkMode) => {
             isDarkMode == window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? localStorage.setItem('theme', 'system')
                 : localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
             theme = localStorage.getItem('theme');
-            console.log(`Variable 'isDarkMode' is changed to ${isDarkMode}`);
-            console.log(`Theme is ${theme}`);
         });
 
-        // Prioritize system preference
+        // Prioritize when system preference is changed
         window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
-            console.log('System preferred color scheme changed. Prioritizing...');
             isDarkMode = e.matches;
         });
     "
