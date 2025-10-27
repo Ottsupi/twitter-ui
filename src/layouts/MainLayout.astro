@@ -6,25 +6,33 @@ import "../styles/global.css";
 <html
     lang="en"
     x-data="{
-        // If theme is set, get saved mode
-        // Else, follow system preference
-        isDarkMode: localStorage.getItem('theme')
-                ? localStorage.getItem('theme') == 'dark'
-                : window.matchMedia('(prefers-color-scheme: dark)').matches,
+        // If theme is 'system' or null, follow system theme
+        // Else, follow saved theme
+        isDarkMode: !('theme' in localStorage) || localStorage.getItem('theme') == 'system'
+                ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                : localStorage.getItem('theme') == 'dark',
         theme: localStorage.getItem('theme') || 'system',
     }"
     x-init="
         // This script only supports two modes, light and dark
+        console.debug(`Saved theme is ${localStorage.getItem('theme')}`);
+        console.debug(`Starting theme is ${theme}`);
+        console.debug(`Variable 'isDarkMode' is ${isDarkMode}`);
+
         // If current mode is the same as preference, follow system theme
         $watch('isDarkMode', (isDarkMode) => {
-            isDarkMode == window.matchMedia('(prefers-color-scheme: dark)').matches
+            console.debug(`Variable 'isDarkMode' is changed to ${isDarkMode}`);
+            console.debug(`Previous theme is ${theme}`);
+            isDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? localStorage.setItem('theme', 'system')
                 : localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
             theme = localStorage.getItem('theme');
+            console.debug(`Current theme is ${theme}`);
         });
 
-        // Prioritize when system preference is changed
+        // Prioritize system preference
         window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+            console.debug('System preferred color scheme changed. Prioritizing...');
             isDarkMode = e.matches;
         });
     "
@@ -40,7 +48,17 @@ import "../styles/global.css";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="stylesheet" href="" />
 
-        <!-- Scripts -->
+        <!-- Script to immediately set theme mode to prevent white flash -->
+        <script is:inline>
+            const isDarkModeInitial =
+                !("theme" in localStorage) ||
+                localStorage.getItem("theme") == "system"
+                    ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                    : localStorage.getItem("theme") == "dark";
+            isDarkModeInitial && document.documentElement.classList.add("dark");
+        </script>
+
+        <!-- Import AlpineJS -->
         <script
             is:inline
             defer
